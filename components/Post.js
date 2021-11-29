@@ -22,7 +22,7 @@ export default function Post({
 
       {/* Showcase card content */}
       <div>
-          <img src={contentURI}  width="400" alt={name} />
+          <img src={contentURI}  width="350" alt={name} />
       </div>
 
       {/* Showcase card footer */}

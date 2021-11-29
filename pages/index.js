@@ -103,11 +103,11 @@ export default function Home() {
 
           {/* Etherscan link */}
           <a
-            href={`https://etherscan.io/address/${address}`}
+            href={`https://explorer.palm.io/address/${address}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Etherscan
+            Palm Explorer
           </a>
         </div>
       </div>
