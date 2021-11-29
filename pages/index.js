@@ -9,8 +9,9 @@ import { ZORA_MEDIA_BY_OWNER } from "@data/queries"; // Retrieval query
 import styles from "@styles/pages/Profile.module.scss"; // Component styles
 import axios from "axios";
 
+
 export default function Home() {
-  const address = '0x317bc33a442aa0f6c8235cb2487f0bb338ed27e4';
+  const address = '0xBF6CCF49CC2874f01916D747a8fe97F14A082be0';
   const [posts, setPosts] = useState([]); // Posts array
   const [loading, setLoading] = useState(true); // Global loading state
 
@@ -42,22 +43,29 @@ export default function Home() {
     for (let i = 0; i < allPosts.owners[0].tokens.length; i++) {
 
       const metadataURI = getIPFSUri(allPosts.owners[0].tokens[i].tokenURI);
-      const metadata = await axios.get(metadataURI, headers);
-      console.log("Token:",allPosts.owners[0].tokens[i]);
-      console.log("Token Metadata:",metadata);
-
-      const post = {
-        "contract": allPosts.owners[0].tokens[i].contract,
-        "token_ID": allPosts.owners[0].tokens[i].id,
-        "tokenURI": allPosts.owners[0].tokens[i].tokenURI,
-        "mintTime":  allPosts.owners[0].tokens[i].mintTime,
-        "image": getIPFSUri(metadata.data.image), 
-        "name": metadata.data.name, 
-        "description": metadata.data.description
-
-
+      try {
+        const metadata = await axios.get(metadataURI, headers);
+        console.log("Token:",allPosts.owners[0].tokens[i]);
+        console.log("Token Metadata:",metadata);
+  
+        const post = {
+          "contract": allPosts.owners[0].tokens[i].contract,
+          "token_ID": allPosts.owners[0].tokens[i].id,
+          "tokenURI": allPosts.owners[0].tokens[i].tokenURI,
+          "mintTime":  allPosts.owners[0].tokens[i].mintTime,
+          "image": getIPFSUri(metadata.data.image), 
+          "name": metadata.data.name, 
+          "description": metadata.data.description
+  
+  
+        }
+        ownedMedia.push(post);
+      } catch (error) {
+        console.log(error);
+        
       }
-      ownedMedia.push(post);
+
+
 
 
     }

@@ -27,7 +27,6 @@
     "react-dom": "17.0.1",
     "react-dropzone": "^11.2.4",
     "sass": "^1.32.5",
-    "sharp": "^0.29.3",
     "unstated-next": "^1.1.0",
     "uuid": "^8.3.2",
     "web3modal": "^1.9.3"
