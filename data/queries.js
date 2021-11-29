@@ -1,7 +1,7 @@
 import { gql } from "graphql-request"; // graphql query language
 
 // Collect all users and creation ids
-export const ZORA_CREATIONS_BY_USER = gql`
+/* export const ZORA_CREATIONS_BY_USER = gql`
   {
     users {
       creations {
@@ -9,7 +9,7 @@ export const ZORA_CREATIONS_BY_USER = gql`
       }
     }
   }
-`;
+`; */
 
 /**
  * Returns gql query to retrieve specific Zora post
@@ -32,7 +32,7 @@ export const ZORA_MEDIA_BY_ID = (id) => {
       createdAtTimestamp
     }
   }
-  `;
+  `
 };
 
 /**
@@ -42,20 +42,21 @@ export const ZORA_MEDIA_BY_ID = (id) => {
  */
 export const ZORA_MEDIA_BY_OWNER = (owner) => {
   return gql`
-    {
-      medias(where: { owner: "${owner}" }) {
-        id
-        owner {
-          id
-        }
-        creator {
-          id
-        }
-        contentURI
-        metadataURI
-        createdAtTimestamp
-      }
-    }
+  {
+    owners (where: {id: "${owner.toString()}"}) 
+     {
+     id
+     tokens {
+       id
+       contract {
+         id 
+       }
+       tokenURI,
+       mintTime
+     }
+     numTokens
+   }
+   }
   `;
 };
 
