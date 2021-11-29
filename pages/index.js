@@ -31,6 +31,7 @@ export default function Home() {
           ZORA_MEDIA_BY_OWNER(address.toLowerCase())
     );
     console.log("tokens:", allPosts.owners[0].tokens);
+    console.log("all:", allPosts);
     let ownedMedia = [];
     // For all owned posts
     let headers = {
@@ -49,6 +50,7 @@ export default function Home() {
         console.log("Token Metadata:",metadata);
   
         const post = {
+          "ownerAddress": allPosts.owners[0].id,
           "contract": allPosts.owners[0].tokens[i].contract,
           "token_ID": allPosts.owners[0].tokens[i].id,
           "tokenURI": allPosts.owners[0].tokens[i].tokenURI,
@@ -126,6 +128,7 @@ export default function Home() {
               // Return Post component
               <Post
                 key={i}
+                ownerAddress={post.ownerAddress}
                 creatorAddress={post.contract}
                 createdAtTimestamp={post.mintTime}
                 contentURI={post.image}

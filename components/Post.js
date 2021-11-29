@@ -26,6 +26,25 @@ export default function Post({
       </div>
 
       {/* Showcase card footer */}
+      <div>
+        {/* Metadata: name */}
+        <h3>{name}</h3>
+
+        {/* Metadata: Owner */}
+        <span>
+          Collected by{" "}
+          <Link href={`/profile/${ownerAddress}`}>
+            <a>
+              <span>
+                {ownerAddress.substr(0, 5) +
+                  "..." +
+                  ownerAddress.slice(ownerAddress.length - 5)}
+              </span>
+              <img src={makeBlockie(ownerAddress)} alt="Avatar" />
+            </a>
+          </Link>
+        </span>
+      </div>
       
     </div>
   );
