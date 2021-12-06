@@ -3,7 +3,6 @@ import client from "@data/index"; // GraphQL client
 import Post from "@components/Profile-post"; // Post component
 import Layout from "@components/Layout"; // Layout wrapper
 import { useState, useEffect } from "react"; // State management
-import { getPostByID } from "@data/functions"; // Post retrieval function
 import makeBlockie from "ethereum-blockies-base64"; // Ethereum avatar
 import { ZORA_MEDIA_BY_OWNER } from "@data/queries"; // Retrieval query
 import styles from "@styles/pages/Profile.module.scss"; // Component styles
