@@ -20,7 +20,7 @@ export default function Header() {
       <div className={styles.header__logo}>
         <Link href="/">
           <a>
-            <img src="/logo.png" alt="User Capital" />
+            <img src="/logo.png" alt="Palm Network Community NFT Gallery minisite" />
           </a>
         </Link>
       </div>

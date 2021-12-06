@@ -1,7 +1,7 @@
 import { gql } from "graphql-request"; // graphql query language
 
 // Collect all users and creation ids
-/* export const ZORA_CREATIONS_BY_USER = gql`
+export const ZORA_CREATIONS_BY_USER = gql`
   {
     users {
       creations {
@@ -9,7 +9,7 @@ import { gql } from "graphql-request"; // graphql query language
       }
     }
   }
-`; */
+`;
 
 /**
  * Returns gql query to retrieve specific Zora post
@@ -40,7 +40,7 @@ export const ZORA_MEDIA_BY_ID = (id) => {
  * @param {String} owner address
  * @returns {gql} query with template string embedded
  */
-export const ZORA_MEDIA_BY_OWNER = (owner) => {
+export const ZORA_MEDIA_BY_OWNER = (owner,NFtContractAddress) => {
   return gql`
   {
     owners (where: {id: "${owner.toString()}"}) 
@@ -48,7 +48,7 @@ export const ZORA_MEDIA_BY_OWNER = (owner) => {
      id
      tokens {
        id
-       contract {
+       contract(where: {contract:"${NFtContractAddress}"}) {
          id 
        }
        tokenURI,

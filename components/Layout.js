@@ -22,29 +22,29 @@ function Meta({ isProfile }) {
   return (
     <Head>
       {/* Primary Meta Tags */}
-      <title>Zora Gallery</title>
-      <meta name="title" content="Zora Gallery" />
+      <title>Palm Network Community NFT Gallery minisite</title>
+      <meta name="title" content="Palm Network Community NFT Gallery minisite" />
       <meta
         name="description"
-        content="Open protocols demand open access. Community-operated interface to ZoraOS."
+        content="Connect your wallet address and check which Palm Network Community NFT do you hold."
       />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://zora.gallery/" />
-      <meta property="og:title" content="Zora Gallery" />
+      <meta property="og:url" content="https://palm.io" />
+      <meta property="og:title" content="Palm Network Community NFT Gallery minisite" />
       <meta
         property="og:description"
-        content="Open protocols demand open access. Community-operated interface to ZoraOS."
+        content="Connect your wallet address and check which Palm Network Community NFT do you hold."
       />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://zora.gallery/" />
-      <meta property="twitter:title" content="Zora Gallery" />
+      <meta property="twitter:url" content="https://palm.io" />
+      <meta property="twitter:title" content="Palm Network Community NFT Gallery minisite" />
       <meta
         property="twitter:description"
-        content="Open protocols demand open access. Community-operated interface to ZoraOS."
+        content="Connect your wallet address and check which Palm Network Community NFT do you hold."
       />
 
       {!isProfile ? (

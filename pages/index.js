@@ -11,7 +11,8 @@ import axios from "axios";
 
 
 export default function Home() {
-  const address = '0xBF6CCF49CC2874f01916D747a8fe97F14A082be0';
+  const address = '0xbf6ccf49cc2874f01916d747a8fe97f14a082be0';
+  const NFtContractAddress = '0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa';
   const [posts, setPosts] = useState([]); // Posts array
   const [loading, setLoading] = useState(true); // Global loading state
 
@@ -28,7 +29,7 @@ export default function Home() {
   const collectOwnedMedia = async () => {
     // Collect all postIDs by owner
       const allPosts = await client.request(
-          ZORA_MEDIA_BY_OWNER(address.toLowerCase())
+          ZORA_MEDIA_BY_OWNER(address.toLowerCase(),NFtContractAddress)
     );
     console.log("tokens:", allPosts.owners[0].tokens);
     console.log("all:", allPosts);
