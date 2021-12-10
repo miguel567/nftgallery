@@ -1,5 +1,5 @@
 {
-  "name": "zora-gallery",
+  "name": "palm-community-nft-gallery",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start"
   },
-  "homepage": "./profile",
+  "homepage": "./",
   "dependencies": {
     "@fleekhq/fleek-storage-js": "^1.0.9",
     "@walletconnect/web3-provider": "^1.3.4",
