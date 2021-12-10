@@ -94,13 +94,10 @@ export default function Home() {
             {!address ? (
         // If not authenticated, display unauthenticated state
         <div className={styles.create__unauthenticated}>
-          <h2>Please authenticate</h2>
-          <p>You must authorize with your wallet to mint media.</p>
+          <h2>Please, connect your wallet</h2>
+          <p>You must connect your wallet to see your NFTs.</p>
 
-          {/* Authenticate dApp */}
-          <button onClick={authenticateWithLoading} disabled={loading}>
-            {loading ? "Connecting..." : "Connect"}
-          </button>
+
         </div>
       ) : (
 
